@@ -1,7 +1,6 @@
 /*  Date: 24/05/2018
-	Description: Αλγόριθμοι και Δομές Δεδομένων - Εργασία 4
+	Description: Project 4 - Compare search algorithms
 	Version 5.3
-	Changes: Tests completed
 */
 #include<stdio.h>
 #include<stdlib.h>

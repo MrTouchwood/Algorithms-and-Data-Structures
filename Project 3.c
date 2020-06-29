@@ -1,7 +1,6 @@
 /*  Date: 12/05/2018
-	Description: Αλγόριθμοι και Δομές Δεδομένων - Εργασία 3
+	Description: Project 3 - Hash Table
 	Version 3.0
-	Changes: added customers matrix
 	*/
 
 #include <stdio.h>
@@ -63,8 +62,8 @@ void linearProbing(char hashTable[hashSIZE][N], char randomCode[N], unsigned int
 			strcpy_s(hashTable[hashIndex], N, randomCode);
 			prices[hashIndex] = 10 + rand() % 990;
 			agores[hashIndex]++;
-			//printf_s("Found next FREE position at Index:%5d. Put %11s\t\t", hashIndex, hashTable[hashIndex]);
-			//printf_s("Skipped %5d positions\n", hashIndex - temp2);
+			//printf("Found next FREE position at Index:%5d. Put %11s\t\t", hashIndex, hashTable[hashIndex]);
+			//printf("Skipped %5d positions\n", hashIndex - temp2);
 			break;
 		}
 		//if the same
@@ -87,7 +86,7 @@ int putCustomerToTable(unsigned int hashIndex, char randomCode[N]) {
 		strcpy_s(hashTable[hashIndex], N, randomCode);
 		prices[hashIndex] = 10 + rand() % 990;
 		agores[hashIndex]++;
-		//printf_s("Place in %6d -> %11s\n", hashIndex, hashTable[hashIndex]);
+		//printf("Place in %6dοΏ½-> %11s\n", hashIndex, hashTable[hashIndex]);
 	}
 	//if the same
 	else if (strcmp(hashTable[hashIndex], randomCode) == 0) {
@@ -95,8 +94,8 @@ int putCustomerToTable(unsigned int hashIndex, char randomCode[N]) {
 		prices[hashIndex] += 10 + rand() % 990;
 	}
 	else {
-		//printf_s("Found in %6d -> %11s\n", hashIndex, hashTable[hashIndex]);
-		//printf_s("\n-> Collision at index %6d ", hashIndex);
+		//printf("Found in %6dοΏ½-> %11s\n", hashIndex, hashTable[hashIndex]);
+		//printf("\n-> Collision at index %6d ", hashIndex);
 		countCollisions++;
 		linearProbing(hashTable, randomCode, hashIndex); // Manage Collision
 	}
@@ -110,7 +109,7 @@ void mostUsedCard() {
 			card = i;
 		}
 	}
-	printf_s("\nMost used card: %s with %u transactions\n", hashTable[card], maxagores);
+	printf("\nMost used card: %s with %u transactions\n", hashTable[card], maxagores);
 	return;
 }
 
@@ -123,7 +122,7 @@ void BestCustomer() {
 		}
 	}
 	if (strcmp(hashTable[card], fillString) == 0) return;
-	printf_s("\nBest customer: %s with %u euros spent\n", hashTable[card], maxcust);
+	printf("\nBest customer: %s with %u euros spent\n", hashTable[card], maxcust);
 	return;
 }
 
@@ -144,10 +143,10 @@ int main() {
 		no = rand() % SIZE;
 		hashIndex = moduloDivision(customers[no]);
 		putCustomerToTable(hashIndex, customers[no]);
-		if ((i == 250000) || (i == 500000) || (i == 750000)) printf_s("This may take a while... %d transactions, %d collisions\n", i, countCollisions);
+		if ((i == 250000) || (i == 500000) || (i == 750000)) printf("This may take a while... %d transactions, %d collisions\n", i, countCollisions);
 	}
 
-	printf_s("Collisions: %d\n", countCollisions);
+	printf("Collisions: %d\n", countCollisions);
 	mostUsedCard();
 	BestCustomer();
 	system("PAUSE");

@@ -1,3 +1,8 @@
+/*  Date: 12/05/2018
+	Description: Project 2 - Sparse Matrices - Airports
+	Version 3.0
+	*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -39,23 +44,23 @@ int main() {
 		if (i < 999) iloc[i + 1] = iloc[i] + fperow;
 	}
 	
-	//for (i = 0; i < 100; i++) printf_s("%d    %d\n", iloc[i], jloc[i]);!!!!!!!!!
-	//for (i = 1000; i < 10000; i++) printf_s("%d\n", jloc[i]);
+	//for (i = 0; i < 100; i++) printf("%d    %d\n", iloc[i], jloc[i]);!!!!!!!!!
+	//for (i = 1000; i < 10000; i++) printf("%d\n", jloc[i]);
 	
 	//zitoumeno
-	printf_s("Megistes apostaseis:\n");
+	printf("Megistes apostaseis:\n");
 	float maxdist;
 	for (i = 0; i < 999; i++) {
-		printf_s("%d   ", i + 1);
+		printf("%d   ", i + 1);
 		maxdist = 0.0;
 		for (j = iloc[i]; j < iloc[i + 1]; j++) if (distance[j] > maxdist) maxdist = distance[j];
-		printf_s("%.2f\n", maxdist);
+		printf("%.2f\n", maxdist);
 	}
 	//last airport
-	printf_s("%d  ", 1000);
+	printf("%d  ", 1000);
 	maxdist = 0.0;
 	for (j = iloc[i]; j < 9999; j++) if (distance[j] > maxdist) maxdist = distance[j];
-	printf_s("%.2f\n", maxdist);
+	printf("%.2f\n", maxdist);
 
 	system("pause");
 	return (0);
