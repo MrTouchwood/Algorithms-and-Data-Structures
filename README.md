@@ -1,5 +1,4 @@
 # Algorithms-and-Data-Structures
-Algorithms and Data Structures codes
 
 Οι κώδικες αφορούν τις εργασίες του μαθήματος "Αλγόριθμοι και Δομές Δεδομένων" του τμήματος ΗΜΤΥ του Πανεπιστημίου Πατρών
 
